@@ -1,8 +1,20 @@
 {
   "version": 2,
-  "dgSpecHash": "oHrtet4VmqU=",
-  "success": true,
-  "projectFilePath": "C:\\Users\\VAJ6CT\\Desktop\\FullStack-Spy\\Backend\\Application\\Application.csproj",
+  "dgSpecHash": "aBxPgkVaU3w=",
+  "success": false,
+  "projectFilePath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Application\\Application.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Domain is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Project Domain supports: net10.0 (.NETCoreApp,Version=v10.0)",
+      "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Application\\Application.csproj",
+      "filePath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Application\\Application.csproj",
+      "libraryId": "Domain",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
