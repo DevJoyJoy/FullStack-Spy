@@ -1,92 +1,210 @@
-1 - Criar as quatro camadas
-    - Api (webapi)
-    - Application (classlib)
-    - Domain (classlib)
-    - Infrastructure (classlib)
+# 🚀 Projeto - Arquitetura e Planejamento
 
-2 - Criar as referências de cada camada (conforme as imagens)
+---
 
-3 - Baixar as depêndencias de cada camada (conforme as imagens)
+## 🏗️ Estrutura da Solução
 
-4 - Criar o .sln geral que conecta as 4 camadas. Dentro do diretório que contém as camadas:
-    - dotnet new sln
-    - dotnet sln add .\Api\
-    - dotnet sln add .\Application\
-    - dotnet sln add .\Domain\
-    - dotnet sln add .\Infrastructure\
-    
-5 - Organizar os arquivos fornecidos (.\Data\)
+### 1. Criar as Camadas
 
+Criar os seguintes projetos:
 
+| Camada | Tipo |
+|----------|----------|
+| API | Web API |
+| Application | Class Library |
+| Domain | Class Library |
+| Infrastructure | Class Library |
 
+---
 
-Linguagens = C#, React, SSMS
-Arquitetura = 
-Design e prototipo mini =
-Requisitos = 
+### 2. Configurar Referências
 
-# Grupo
+Adicionar as referências entre projetos conforme o diagrama de arquitetura fornecido.
+
+> ⚠️ Seguir exatamente as dependências definidas nas imagens do projeto.
+
+---
+
+### 3. Instalar Dependências
+
+Instalar os pacotes NuGet necessários para cada camada.
+
+> 📦 Utilizar as dependências indicadas na documentação/imagens fornecidas.
+
+---
+
+### 4. Criar a Solution
+
+Dentro do diretório raiz do projeto:
+
+```bash
+dotnet new sln
+
+dotnet sln add .\Api\
+dotnet sln add .\Application\
+dotnet sln add .\Domain\
+dotnet sln add .\Infrastructure\
+```
+
+Estrutura esperada:
+
+```text
+Solution
+│
+├── Api
+├── Application
+├── Domain
+└── Infrastructure
+```
+
+---
+
+### 5. Organizar Arquivos
+
+Mover e organizar os arquivos fornecidos em:
+
+```text
+.\Data\
+```
+
+---
+
+# 🛠️ Stack Tecnológica
+
+| Categoria | Tecnologia |
+|------------|------------|
+| Backend | C# (.NET) |
+| Frontend | React |
+| Banco de Dados | SQL Server (SSMS) |
+
+---
+
+# 📐 Arquitetura
+
+> Definir posteriormente.
+
+---
+
+# 🎨 Design e Protótipo
+
+> Definir posteriormente.
+
+---
+
+# 📋 Requisitos Funcionais
+
+---
+
+# 👥 Grupo
+
 ## POST
-Criar grupos
-entrar em grupos
+
+- Criar grupo
+- Entrar em grupo
 
 ## GET
-compartilhar um grupo
 
-## DELETE
-Sair do grupo 
+- Compartilhar grupo
 
 ## PUT
-Mudar nome 
 
-
-
-
-# User
-## POST
-Criar conta 
-Reagir a localização
-
-## GET
-Ver grupos 
-Abrir grupo 
+- Alterar nome do grupo
 
 ## DELETE
-Apagar conta
+
+- Sair do grupo
+
+---
+
+# 👤 Usuário
+
+## POST
+
+- Criar conta
+- Reagir a uma localização
+
+## GET
+
+- Visualizar grupos
+- Abrir grupo
 
 ## PUT
-Alterar dados 
 
-
-# Lugar
-## POST
-Criar circulo
-
-## GET
-Ver Circulos
+- Alterar dados da conta
 
 ## DELETE
-Apagar circulo
+
+- Apagar conta
+
+---
+
+# 📍 Lugar
+
+## POST
+
+- Criar círculo
+
+## GET
+
+- Visualizar círculos
 
 ## PATCH
-Trocar nome
-Aumentar raio
-Mudar localização
 
-# Localização
+- Alterar nome
+- Alterar raio
+- Alterar localização
+
+## DELETE
+
+- Apagar círculo
+
+---
+
+# 🌎 Localização
 
 ## GET
-Pegar latidude e longitude do usuario
-Pegar Data 
 
-# Alterações Futuras
+- Obter latitude do usuário
+- Obter longitude do usuário
+- Obter data da localização
 
-## Notificação
+---
+
+# 🔔 Funcionalidades Futuras
+
+## Notificações
+
 ### POST
-Mandar notificação
 
-# Graficos
+- Enviar notificação
+
+---
+
+# 📊 Gráficos
+
 ## GET
-Mostrar dados de um periodo de tempo de um usuario
 
+- Exibir dados de um período específico de um usuário
 
+---
+
+# 📌 Resumo da API
+
+| Entidade | GET | POST | PUT/PATCH | DELETE |
+|-----------|-------|--------|------------|---------|
+| Grupo | ✅ | ✅ | ✅ | ✅ |
+| Usuário | ✅ | ✅ | ✅ | ✅ |
+| Lugar | ✅ | ✅ | ✅ | ✅ |
+| Localização | ✅ | ❌ | ❌ | ❌ |
+| Notificação | ❌ | ✅ | ❌ | ❌ |
+| Gráficos | ✅ | ❌ | ❌ | ❌ |
+
+---
+
+<div align="center">
+
+### 🚧 Projeto em Desenvolvimento 🚧
+
+Arquitetura baseada em Clean Architecture + API REST
+
+</div>
