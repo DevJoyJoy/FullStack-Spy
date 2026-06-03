@@ -32,5 +32,14 @@ public static class UsuarioClassMap
         builder.HasMany(usuario => usuario.Localizacoes)
             .WithOne(localizacao => localizacao.Usuario)
             .HasForeignKey(localizacao => localizacao.UsuarioId);
+
+        builder.HasMany(usuario => usuario.Notificacoes)
+            .WithOne(notificacao => notificacao.Destinatario)
+            .HasForeignKey(notificacao => notificacao.IdDestinatario);
+        
+        builder.HasMany(usuario => usuario.Notificacoes)
+            .WithOne(notificacao => notificacao.Remetente)
+            .HasForeignKey(notificacao => notificacao.IdRemetente);
+        
     });
 }

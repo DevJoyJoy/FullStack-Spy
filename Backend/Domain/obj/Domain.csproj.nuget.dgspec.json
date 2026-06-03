@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {}
+    "C:\\Users\\zeh1ct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {
+    "C:\\Users\\zeh1ct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\zeh1ct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\CAT5CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\zeh1ct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\zeh1ct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\zeh1ct\\Desktop\\FullStack-Spy\\Backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CAT5CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\zeh1ct\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
