@@ -1,0 +1,11 @@
+public class Usuario : BaseModel
+{
+    //================PROPERTIES================
+    public required string Nome {get;set;}
+    public required string Icon {get;set;}
+
+
+    //================RELATIONS================
+    public ICollection<Grupo> Grupos {get;set;} = [];
+    public ICollection<Localizacao> Localizacoes {get;set;} = [];
+}
