@@ -1,6 +1,8 @@
 namespace Backend.Application.Features.Group.ShareGroup;
 
-public class ShareGroupUseCase
+public class ShareGroupUseCase(
+    Context
+)
 {
     
 }

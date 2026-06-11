@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 
+namespace Backend.Infrastructure.Context;
+
 public class Context(DbContextOptions<Context> ctx) : DbContext(ctx)
 {
     public DbSet<Grupo> Grupos {get;set;}

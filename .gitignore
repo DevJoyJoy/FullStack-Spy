@@ -1,2 +1,6 @@
 obj
 bin
+
+# .NET build files
+bin/
+obj/
