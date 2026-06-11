@@ -1,5 +1,5 @@
+namespace Backend.Application.Features.User.ViewGroups;
 
-namespace Backend.Application.Features.CreateGroup;
 public class ViewGroupsPayload
 {
     

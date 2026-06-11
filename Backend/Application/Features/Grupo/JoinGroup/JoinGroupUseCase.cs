@@ -1,5 +1,4 @@
-namespace Backend.Application.Features.CreateGroup;
-
+namespace Backend.Application.Features.Group.JoinGroup;
 public class JoinGroupUseCase
 {
     

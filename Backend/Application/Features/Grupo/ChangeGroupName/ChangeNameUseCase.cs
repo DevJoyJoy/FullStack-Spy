@@ -1,6 +1,6 @@
-namespace Backend.Application.Features.CreateGroup;
+namespace Backend.Application.Features.Group.CreateGroup;
 
-public class CreateGroupUseCase
+public class ChangeNameUseCase
 {
     
 }

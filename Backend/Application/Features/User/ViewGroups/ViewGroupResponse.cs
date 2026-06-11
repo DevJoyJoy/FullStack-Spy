@@ -1,4 +1,5 @@
-namespace Backend.Application.Features.CreateGroup;
+namespace Backend.Application.Features.User.ViewGroups;
+
 public class ViewGroupResponse
 {
     

@@ -1,4 +1,4 @@
-namespace Backend.Application.Features.CreateGroup;
+namespace Backend.Application.Features.User.CreateAccount;
 public class CreateAccountUseCase
 {
     
