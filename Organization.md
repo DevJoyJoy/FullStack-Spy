@@ -1,8 +1,6 @@
-# 🚀 Projeto - Arquitetura e Planejamento
+# Projeto - Arquitetura e Planejamento
 
----
-
-## 🏗️ Estrutura da Solução
+## Estrutura da Solução
 
 ### 1. Criar as Camadas
 
@@ -21,7 +19,7 @@ Criar os seguintes projetos:
 
 Adicionar as referências entre projetos conforme o diagrama de arquitetura fornecido.
 
-> ⚠️ Seguir exatamente as dependências definidas nas imagens do projeto.
+> Seguir exatamente as dependências definidas nas imagens do projeto.
 
 ---
 
@@ -29,7 +27,7 @@ Adicionar as referências entre projetos conforme o diagrama de arquitetura forn
 
 Instalar os pacotes NuGet necessários para cada camada.
 
-> 📦 Utilizar as dependências indicadas na documentação/imagens fornecidas.
+> Utilizar as dependências indicadas na documentação/imagens fornecidas.
 
 ---
 
@@ -69,7 +67,7 @@ Mover e organizar os arquivos fornecidos em:
 
 ---
 
-# 🛠️ Stack Tecnológica
+# Stack Tecnológica
 
 | Categoria | Tecnologia |
 |------------|------------|
@@ -79,19 +77,19 @@ Mover e organizar os arquivos fornecidos em:
 
 ---
 
-# 📐 Arquitetura
+# Arquitetura
+
+> 
+
+---
+
+# Design e Protótipo
 
 > Definir posteriormente.
 
 ---
 
-# 🎨 Design e Protótipo
-
-> Definir posteriormente.
-
----
-
-# 📋 Requisitos Funcionais
+# Requisitos Funcionais
 
 ---
 
