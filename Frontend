@@ -1,0 +1,12 @@
+FROM node:20 
+
+WORKDIR ./App
+
+ENV HTTP_PROXY="http://host.docker.internal:3128"
+ENV HTTPS_PROXY="http://host.docker.internal:3128"
+
+COPY ./Code/Frontend/3spys ./
+
+CMD ["npm","run","dev"]
+
+EXPOSE 1010
