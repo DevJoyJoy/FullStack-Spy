@@ -1,5 +1,22 @@
 # Projeto - Arquitetura e Planejamento
 
+## To Do
+
+### Backend
+**API**
+- [] Configuração dos Use Cases
+- [] Configuração dos Services
+**Application**
+- [] Implementação dos Uses Cases
+- [] Implementação dos Services
+**Domain**
+- 
+**Infrastructure**
+- [] 
+
+### Frontend
+
+
 ## Estrutura da Solução
 
 ### 1. Criar as Camadas
@@ -206,3 +223,4 @@ Mover e organizar os arquivos fornecidos em:
 Arquitetura baseada em Clean Architecture + API REST
 
 </div>
+
