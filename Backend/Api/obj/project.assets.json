@@ -2269,24 +2269,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\CAT5CT\\.nuget\\packages\\": {}
+    "C:\\Users\\disrct\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Api\\Api.csproj",
+      "projectUniqueName": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Api\\Api.csproj",
       "projectName": "Api",
-      "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Api\\Api.csproj",
-      "packagesPath": "C:\\Users\\CAT5CT\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Api\\obj\\",
+      "projectPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Api\\Api.csproj",
+      "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Api\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\CAT5CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -2294,11 +2295,11 @@
           "framework": "net10.0",
           "targetAlias": "net10.0",
           "projectReferences": {
-            "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Application\\Application.csproj"
+            "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Application\\Application.csproj": {
+              "projectPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Application\\Application.csproj"
             },
-            "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -2350,7 +2351,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.AspNetCore": "(,10.0.32767]",
           "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

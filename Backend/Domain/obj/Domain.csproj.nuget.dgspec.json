@@ -1,25 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {}
+    "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {
+    "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\CAT5CT\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CAT5CT\\Desktop\\repo\\FullStack-Spy\\Backend\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\disrct\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\disrct\\Desktop\\FullStack-Spy\\Backend\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\CAT5CT\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\disrct\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
         ],
         "sources": {
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -61,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.301/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",
