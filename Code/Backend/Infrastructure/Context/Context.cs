@@ -1,8 +1,9 @@
+using Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Backend.Infrastructure.Context;
+namespace Backend.Infrastructure;
 
-public class Context(DbContextOptions<Context> ctx) : DbContext(ctx)
+public class SpyContext(DbContextOptions<SpyContext> ctx) : DbContext(ctx)
 {
     public DbSet<Grupo> Grupos {get;set;}
     public DbSet<Localizacao> Localizacoes {get;set;}
