@@ -1,3 +1,5 @@
+using Backend.Domain.Models;
+
 public class Localizacao : BaseModel
 {
     //================PROPERTIES================

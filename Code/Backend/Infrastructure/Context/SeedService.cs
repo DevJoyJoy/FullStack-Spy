@@ -1,4 +1,5 @@
-using System.ComponentModel;
+
+using Backend.Infrastructure.Context;
 // popular o banco -> nesse nao precisa pq obriga a criar
 public class SeedService
 (

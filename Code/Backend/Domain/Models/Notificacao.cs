@@ -1,3 +1,5 @@
+using Backend.Domain.Models;
+
 public class Notificacao : BaseModel
 {
     //================PROPERTIES================

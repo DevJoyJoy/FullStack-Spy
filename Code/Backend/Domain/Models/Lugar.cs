@@ -1,3 +1,5 @@
+namespace Backend.Domain.Models;
+
 public class Lugar : BaseModel
 {
     //================PROPERTIES================

@@ -9,4 +9,4 @@ COPY ./Code/Frontend/3spys ./
 
 CMD ["npm","run","dev"]
 
-EXPOSE 1010
+EXPOSE 5137
