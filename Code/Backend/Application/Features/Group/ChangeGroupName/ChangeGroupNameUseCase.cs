@@ -1,7 +1,6 @@
 namespace Backend.Application.Features.Group.CreateGroup;
 
-
-public class ChangeNameResponse
+public class ChangeGroupNameUseCase()
 {
     
 }

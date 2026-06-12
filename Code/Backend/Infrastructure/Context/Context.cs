@@ -1,3 +1,4 @@
+using Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace Backend.Infrastructure.Context;

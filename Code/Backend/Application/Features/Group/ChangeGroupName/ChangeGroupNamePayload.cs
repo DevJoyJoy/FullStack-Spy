@@ -1,5 +1,5 @@
 namespace Backend.Application.Features.Group.CreateGroup;
-public class ChangeNamePayload
+public class ChangeGroupNamePayload
 {
     
 }

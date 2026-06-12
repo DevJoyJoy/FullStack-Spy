@@ -1,3 +1,4 @@
+using Backend.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
 public static class MigrationConfiguration
