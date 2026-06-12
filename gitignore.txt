@@ -1,7 +1,8 @@
-
-# .NET
+# .NET build files
 bin/
 obj/
+**/bin/
+**/obj/
 
 # Visual Studio
 .vs/
