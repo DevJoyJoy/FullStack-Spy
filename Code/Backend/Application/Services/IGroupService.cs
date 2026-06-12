@@ -2,7 +2,7 @@ using Backend.Domain.Models;
 
 namespace Backend.Application.Services;
 
-public interface GroupService
+public interface IGroupService
 {
     Task<Grupo> GetByLink(string link);
     Task<Grupo> CreateGroup(Grupo grupo);
