@@ -1,3 +1,4 @@
+using Backend.Application.Features.Group.CreateGroup;
 using Backend.Domain.Models;
 
 namespace Backend.Application.Services;
@@ -5,5 +6,5 @@ namespace Backend.Application.Services;
 public interface IGroupService
 {
     Task<Grupo> GetByLink(string link);
-    Task<Grupo> CreateGroup(Grupo grupo);
+    Task<Grupo> CreateGroup(CreateGroupPayload payload);
 }
