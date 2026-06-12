@@ -1,4 +1,5 @@
 import { Header } from '../Components/Header';
+import { Footer } from '../Components/Footer';
 import '../Styles/MainPage.css'
 
 export function MainPage() {
@@ -15,6 +16,7 @@ export function MainPage() {
                 <p>Visto por último: 07:99</p>
               </section>
             </div>
+          <Footer></Footer>
       </div>
     </>
   )
