@@ -1,3 +1,13 @@
+<<<<<<< HEAD
+# .NET build files
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+=======
 
 # .NET
 bin/
@@ -13,3 +23,4 @@ obj/
 # Build results
 [Dd]ebug/
 [Rr]elease/
+>>>>>>> bbd1210461f0b12f9e3cf5c30911a8700a8417e4

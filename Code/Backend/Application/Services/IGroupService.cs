@@ -1,3 +1,5 @@
+using Backend.Domain.Models;
+
 namespace Backend.Application.Services;
 
 public interface IGroupService
