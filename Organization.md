@@ -114,20 +114,20 @@ Mover e organizar os arquivos fornecidos em:
 
 ## POST
 
-- Criar grupo
-- Entrar em grupo
+- Criar grupo - **Heloise**
+- Entrar em grupo - **Heloise**
 
 ## GET
 
-- Compartilhar grupo
+- Compartilhar grupo **Anna**
 
 ## PUT
 
-- Alterar nome do grupo
+- Alterar nome do grupo **Heloise**
 
 ## DELETE
 
-- Sair do grupo
+- Sair do grupo **Anna**
 
 ---
 
@@ -135,21 +135,21 @@ Mover e organizar os arquivos fornecidos em:
 
 ## POST
 
-- Criar conta
-- Reagir a uma localização
+- Criar conta **Anna**
+- Reagir a uma localização 
 
 ## GET
 
-- Visualizar grupos
-- Abrir grupo
+- Visualizar grupos **Anna**
+- Selecionar grupo **Heloise**
 
 ## PUT
 
-- Alterar dados da conta
+- Alterar dados da conta **Anna**
 
 ## DELETE
 
-- Apagar conta
+- Apagar conta **Heloise**
 
 ---
 
@@ -157,21 +157,21 @@ Mover e organizar os arquivos fornecidos em:
 
 ## POST
 
-- Criar círculo
+- Criar círculo **Anna**
 
 ## GET
 
-- Visualizar círculos
+- Visualizar círculos **Heloise**
 
 ## PATCH
 
-- Alterar nome
-- Alterar raio
-- Alterar localização
+- Alterar nome **anna**
+- Alterar raio **Heloise**
+- Alterar localização **Anna**
 
 ## DELETE
 
-- Apagar círculo
+- Apagar círculo **Heoise**
 
 ---
 
@@ -179,9 +179,9 @@ Mover e organizar os arquivos fornecidos em:
 
 ## GET
 
-- Obter latitude do usuário
-- Obter longitude do usuário
-- Obter data da localização
+- Obter latitude do usuário **Anna**
+- Obter longitude do usuário **Heloise**
+- Obter data da localização **Anna**
 
 ---
 

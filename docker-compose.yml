@@ -1,0 +1,36 @@
+services:
+  api:
+    image: spy_api
+
+    build: 
+      context: .
+      dockerfile: Backend
+    ports:
+      -
+    environment:
+      - DB_HOST=database
+      - DB_PORT=1111
+      - DB_DB=3spys
+      - DB_USER=anjolo
+      - DB_PASS=123456_*04
+    
+  database:
+    image: mysql:latest
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=3spys
+      - MYSQL_USER=anjolo
+      - MYSQL_PASSWORD=123456_*04
+
+  ui:
+    ports:
+      -8080:1010 
+    image: spy_ui 
+    
+    build: 
+      context: .
+      dockerfile: Frontend
+    
+    environment:
+      - 
