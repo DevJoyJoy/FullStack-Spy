@@ -1,0 +1,16 @@
+# .NET build files
+bin/
+obj/
+**/bin/
+**/obj/
+
+# Visual Studio
+.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
