@@ -5,6 +5,6 @@ namespace Backend.Application.Services;
 
 public interface IGroupService
 {
-    Task<Grupo> GetByLink(string link);
+    Task<Result<CreateGroupResponse>> GetByLink(string link);
     Task<Grupo> CreateGroup(CreateGroupPayload payload);
 }
