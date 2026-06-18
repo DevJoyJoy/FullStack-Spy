@@ -6,6 +6,6 @@ public class Grupo : BaseModel
 
 
     //================RELATIONS================
-    public required ICollection<Usuario> Usuarios {get;set;} = [];
-    public required ICollection<Lugar> Lugares {get;set;} = [];
+    public ICollection<Usuario> Usuarios {get;set;} = [];
+    public ICollection<Lugar> Lugares {get;set;} = [];
 }
