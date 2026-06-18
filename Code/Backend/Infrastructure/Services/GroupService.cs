@@ -30,6 +30,9 @@ public class GroupService( SpyContext ctx) : IGroupService
         ctx.Grupos.Add(newGroup);
         await ctx.SaveChangesAsync();
 
-        return Result<CreateGroupResponse>.Success();
+        return Result<CreateGroupResponse>.Success(new CreateGroupResponse()
+        {
+            Nome = newGroup.Nome
+        });
     }
 }
