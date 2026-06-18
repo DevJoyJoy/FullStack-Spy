@@ -5,28 +5,28 @@ export function Footer() {
     const navigate = useNavigate()
 
     return(
-        <div class="footer">
-            <div class="menuItem">
+        <div className="footer">
+            <div className="menuItem">
                 <a href="" onClick={() => navigate('/')}>
-                    <img src="../../public/circle-blank.svg" alt="" />
+                    <img src="/circle-blank.svg" alt="" />
                     <p>Localização</p>
                 </a>
             </div>
-            <div class="menuItem">
+            <div className="menuItem">
                 <a href="" onClick={() => navigate('/Group')}>
-                    <img src="../../public/circle-blank.svg" alt="" />
+                    <img src="/circle-blank.svg" alt="" />
                     <p>Grupos</p>
                 </a>
             </div>
-            <div class="menuItem">
+            <div className="menuItem">
                 <a href="" onClick={() => navigate('/Circle')}>
-                    <img src="../../public/circle-blank.svg" alt="" />
+                    <img src="/circle-blank.svg" alt="" />
                     <p>Círculos</p>
                 </a>
             </div>
-            <div class="menuItem">
+            <div className="menuItem">
                 <a href="" onClick={() => navigate('/Profile')}>
-                    <img src="../../public/circle-blank.svg" alt="" />
+                    <img src="/circle-blank.svg" alt="" />
                     <p>Perfil</p>
                 </a>
             </div>

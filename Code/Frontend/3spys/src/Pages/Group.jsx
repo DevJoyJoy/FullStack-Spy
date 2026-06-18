@@ -1,5 +1,14 @@
+import { Header } from "../Components/Header"
+import { Footer } from "../Components/Footer"
+
 export function Group() {
     return(
-        <h1>GROUP</h1>
+        <>
+            <Header></Header>
+                <div>
+                    
+                </div>
+            <Footer></Footer>
+        </>
     )
 }
