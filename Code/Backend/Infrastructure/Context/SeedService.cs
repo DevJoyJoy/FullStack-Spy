@@ -4,7 +4,7 @@ using Backend.Infrastructure;
 
 public class SeedService
 (
-    DbContext ctx
+    SpyContext ctx
 )
 {
     public async Task SeedData()

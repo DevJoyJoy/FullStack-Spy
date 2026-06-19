@@ -1,7 +1,5 @@
-using System.Text.RegularExpressions;
 using Backend.Application;
 using Backend.Application.Features.User.CreateAccount;
-using Backend.Application.Features.User.DeleteAccount;
 using Backend.Application.Services;
 using Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -106,10 +104,5 @@ public class UserService(SpyContext ctx) : IUserService
 
         return Result<List<Grupo>>.Success(Grupo);
         
-    }
-
-    Task<Result<DeleteAccountResponse>> IUserService.DeleteAccount(string Name)
-    {
-        throw new NotImplementedException();
     }
 }
