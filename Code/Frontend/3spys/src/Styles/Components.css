@@ -110,12 +110,12 @@
   cursor: pointer;
   border: none;
   transition: .5s;
-  background-color: #192a78;
+  background-color: #873480;
   width: 100%;
 }
 
 .modalButton:hover {
-  background-color: #0a1441;
+  background-color: #501d4c;
 }
 
 .uploadLabel {

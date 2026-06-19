@@ -8,6 +8,16 @@
     box-sizing: border-box;
 }
 
+.loadScreen {
+    flex: 1; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column; 
+    gap: 20px;
+    margin-top: 8vh;
+}
+
 .map {
     background-color: rgb(123, 131, 131);
     width: 100%;

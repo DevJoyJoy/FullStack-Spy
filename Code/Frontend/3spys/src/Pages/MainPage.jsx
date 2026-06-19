@@ -67,10 +67,10 @@ export function MainPage() {
 
   if (!minhaPosicao) {
     return (
-      <div className="pageMain">
+      <div className="page">
         <Header />
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column', gap: '10px' }}>
-          <div className="ponto-gps-nucleo" style={{ position: 'relative', animation: 'pulsarGps 1.5s infinite' }}></div>
+        <div className="loadScreen">
+          <div className="ponto-gps-nucleo" style={{ position: 'relative', top: 0, left: 0, animation: 'pulsarGps 1.5s infinite' }}></div>
           <p style={{ color: '#666', fontSize: '14px', fontWeight: 'bold' }}>Buscando seu local atual...</p>
         </div>
         <Footer />
