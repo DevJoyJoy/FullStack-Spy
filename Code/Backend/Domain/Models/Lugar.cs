@@ -5,6 +5,8 @@ public class Lugar : BaseModel
     //================PROPERTIES================
     public required string Nome {get;set;}
     public required int Raio {get;set;}
+    public required double Latitude {get;set;}
+    public required double Longitude {get;set;}
 
 
     //================MY-RELATIONS================

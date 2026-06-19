@@ -59,6 +59,15 @@ public class UserService(SpyContext ctx) : IUserService
     
     }
 
+    public async Task<Result<Usuario>> GetUserById(int Id)
+    {
+        var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u.Id == Id);
+        if(user is null)
+            return Result<Usuario>.Fail("User not found");
+
+        return Result<Usuario>.Success(user);
+    }
+
     public async Task<Result<CreateAccountResponse>> GetUserByName(string Name_)
     {
         var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u.Nome == Name_);
@@ -97,5 +106,10 @@ public class UserService(SpyContext ctx) : IUserService
 
         return Result<List<Grupo>>.Success(Grupo);
         
+    }
+
+    Task<Result<DeleteAccountResponse>> IUserService.DeleteAccount(string Name)
+    {
+        throw new NotImplementedException();
     }
 }

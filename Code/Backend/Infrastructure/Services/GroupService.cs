@@ -6,7 +6,7 @@ using Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 namespace Backend.Infrastructure.Services;
 
-public class GroupService( SpyContext ctx) : IGroupService
+public class GroupService( SpyContext ctx, IUserService userService) : IGroupService
 {
     public async Task<Result<GetBylinkDTO>> GetByLink(string link)
     {
@@ -29,7 +29,11 @@ public class GroupService( SpyContext ctx) : IGroupService
             Nome = payload.Nome
         };
 
+        Usuario user = (await userService.GetUserById(payload.UserId)).data;
+
+        newGroup.Usuarios.Add(user);
         ctx.Grupos.Add(newGroup);
+
         await ctx.SaveChangesAsync();
 
         return Result<CreateGroupResponse>.Success(new CreateGroupResponse()

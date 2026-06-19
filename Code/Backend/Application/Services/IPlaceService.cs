@@ -6,5 +6,5 @@ public interface IPlaceService
 {
     public Task<Result<CreateCircleResponse>> CreateCircle(CreateCirclePayload payload);
     public Task<Result<List<ViewCircleResponse>>> ViewCirclesByGroup(ViewCirclePayload payload);
-    public Task<Result<ViewCircleResponse>> ViewCircleByGroup(ViewCirclePayload payload);
+    public Task<Result<ViewCircleResponse>> ViewCircleByIdAndByGroup(ViewCirclePayload payload);
 }

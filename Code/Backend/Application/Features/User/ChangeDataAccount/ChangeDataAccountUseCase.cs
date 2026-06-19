@@ -7,12 +7,12 @@ public class ChangeDataAccountUseCase(
     IUserService userService
 )
 {
-    public async Task<Result<CreateAccountPayload>> Do( CreateAccountPayload payload)
-    {
+    // public async Task<Result<CreateAccountPayload>> Do( CreateAccountPayload payload)
+    // {
 
-        var user = await userService.GetUserByName(payload.Name);
+    //     var user = await userService.GetUserByName(payload.Name);
         
-        return; 
-    }
+    //     return; 
+    // }
     
 }
