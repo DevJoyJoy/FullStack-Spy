@@ -7,4 +7,5 @@ public class CreateGroupPayload
     [Required]
     public string Nome {get; set;}
 
+    public int UserId {get; set;}
 }

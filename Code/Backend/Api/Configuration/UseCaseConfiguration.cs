@@ -9,6 +9,12 @@ using Backend.Application.Features.User.DeleteAccount;
 using Backend.Application.Features.User.OpenGroup;
 using Backend.Application.Features.User.ReactLocation;
 using Backend.Application.Features.User.ViewGroups;
+using Backend.Application.Features.Place.ChangeLocation;
+using Backend.Application.Features.Place.ChangeName;
+using Backend.Application.Features.Place.ChangeRadius;
+using Backend.Application.Features.Place.CreateCircle;
+using Backend.Application.Features.Place.DeleteCircle;
+using Backend.Application.Features.Place.ViewCircle;
 
 public static class UseCaseConfiguration
 {

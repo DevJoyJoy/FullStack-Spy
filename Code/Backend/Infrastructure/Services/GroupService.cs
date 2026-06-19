@@ -1,20 +1,22 @@
-using System.Text.RegularExpressions;
 using Backend.Application;
 using Backend.Application.Features.GetByLinkDTO;
 using Backend.Application.Features.Group.CreateGroup;
-using Backend.Application.Features.User.CreateAccount;
 using Backend.Application.Services;
 using Backend.Domain.Models;
-using Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-
 namespace Backend.Infrastructure.Services;
 
-public class GroupService( SpyContext ctx) : IGroupService
+public class GroupService( SpyContext ctx, IUserService userService) : IGroupService
 {
-    public Task<Result<GetBylinkDTO>> GetByLink(string link)
+    public async Task<Result<GetBylinkDTO>> GetByLink(string link)
     {
-        throw new NotImplementedException();
+        var group = await ctx.Grupos.FirstOrDefaultAsync(g => g.Link == link);
+        if(group is null)
+            return Result<GetBylinkDTO>.Fail("Link is not valid.");
+        
+        return Result<GetBylinkDTO>.Success(
+            new GetBylinkDTO(group.Id)
+        );
     }
 
     public async Task<Result<CreateGroupResponse>> CreateGroup(CreateGroupPayload payload)
@@ -27,12 +29,25 @@ public class GroupService( SpyContext ctx) : IGroupService
             Nome = payload.Nome
         };
 
+        Usuario user = (await userService.GetUserById(payload.UserId)).data;
+
+        newGroup.Usuarios.Add(user);
         ctx.Grupos.Add(newGroup);
+
         await ctx.SaveChangesAsync();
 
         return Result<CreateGroupResponse>.Success(new CreateGroupResponse()
         {
             Nome = newGroup.Nome
         });
+    }
+
+    public async Task<Result<Grupo>> GetById(int id)
+    {
+        Grupo? group = await ctx.Grupos.FirstOrDefaultAsync(g => g.Id == id);
+        if(group is null)
+            return Result<Grupo>.Fail("Group not Found");
+        
+        return Result<Grupo>.Success(group);
     }
 }

@@ -1,10 +1,10 @@
-namespace Backend.Application.Services;
+using Backend.Application;
+using Backend.Application.Features.Place.CreateCircle;
+using Backend.Application.Features.Place.ViewCircle;
 
-using Backend.Domain.Models;
 public interface IPlaceService
 {
-    Task<Lugar> CreateCircle(Lugar place);
-    Task<Lugar> DeleteCircle(string Name);
-    Task<Lugar> GetGroupByName(string Name);
-
+    public Task<Result<CreateCircleResponse>> CreateCircle(CreateCirclePayload payload);
+    public Task<Result<List<ViewCircleResponse>>> ViewCirclesByGroup(ViewCirclePayload payload);
+    public Task<Result<ViewCircleResponse>> ViewCircleByIdAndByGroup(ViewCirclePayload payload);
 }

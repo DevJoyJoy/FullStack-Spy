@@ -16,6 +16,10 @@ public static class GrupoClassMap
             .HasColumnName("nome")
             .IsRequired();
 
+        builder.Property(grupo => grupo.Link)
+            .HasColumnName("link")
+            .IsRequired();
+
     //================RELATIONS================
         builder.HasMany(grupo => grupo.Usuarios)
             .WithMany(usuario => usuario.Grupos)

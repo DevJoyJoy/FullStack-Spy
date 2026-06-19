@@ -19,6 +19,12 @@ public static class LugarClassMap
         builder.Property(lugar => lugar.Raio)
             .HasColumnName("raio")
             .IsRequired();
+        builder.Property(lugar => lugar.Latitude)
+            .HasColumnName("latitude")
+            .IsRequired();
+        builder.Property(lugar => lugar.Longitude)
+            .HasColumnName("longitude")
+            .IsRequired();
 
     //================MY-RELATIONS================
         builder.Property(lugar => lugar.GrupoId)
