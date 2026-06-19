@@ -1,12 +1,11 @@
-using Backend.Infrastructure.Context;
+using Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 public static class DbConfiguration
 {
     public static void ConfigureDb(this IServiceCollection service)
     {
-        service.AddDbContext<Context>(options =>
+        service.AddDbContext<SpyContext>(options =>
         {
             var host = Environment.GetEnvironmentVariable("DB_HOST");
             var port = Environment.GetEnvironmentVariable("DB_PORT");

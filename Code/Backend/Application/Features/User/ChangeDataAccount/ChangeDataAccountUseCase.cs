@@ -7,12 +7,19 @@ public class ChangeDataAccountUseCase(
     IUserService userService
 )
 {
-    public async Task<Result<CreateAccountPayload>> Do( CreateAccountPayload payload)
+    public async Task<Result<CreateAccountResponse>> Do( CreateAccountPayload payload)
     {
+        Result<CreateAccountResponse> result = await userService.GetUserByName(payload.Name);
 
-        var user = await userService.GetUserByName(payload.Name);
-        
-        return; 
+        if(!result.IsSuccess)
+            return Result<CreateAccountResponse>.Fail("result not found");
+
+        return Result<CreateAccountResponse>.Success(new CreateAccountResponse()
+        {
+            Name = result.data.Name, 
+            Icon = result.data.Icon
+        });
+    
     }
     
 }

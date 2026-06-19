@@ -17,7 +17,7 @@ public class GroupService( SpyContext ctx) : IGroupService
         throw new NotImplementedException();
     }
 
-    public async Task<Result<CreateGroupResponse>> Do(CreateGroupPayload payload)
+    public async Task<Result<CreateGroupResponse>> CreateGroup(CreateGroupPayload payload)
     {
         var group = await ctx.Grupos.AnyAsync(n => n.Nome == payload.Nome);
         if(group) 
