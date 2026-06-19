@@ -28,7 +28,7 @@ public class PlaceService(SpyContext ctx, IGroupService groupService) : IPlaceSe
         {
             Name = newPlace.Nome,
             Createdby = 
-        })  
+        });
     }
 
     public Task<Result<ViewCircleResponse>> ViewCircleByGroup(ViewCirclePayload payload)
