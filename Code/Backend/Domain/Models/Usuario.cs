@@ -1,3 +1,5 @@
+using Backend.Domain.Models;
+
 public class Usuario : BaseModel
 {
     //================PROPERTIES================
@@ -8,5 +10,6 @@ public class Usuario : BaseModel
     //================RELATIONS================
     public ICollection<Grupo> Grupos {get;set;} = [];
     public ICollection<Localizacao> Localizacoes {get;set;} = [];
-    public ICollection<Notificacao> Notificacoes  {get;set;} = [];
+    public ICollection<Notificacao> NotificacoesEnviadas  {get;set;} = [];
+    public ICollection<Notificacao> NotificacoesRecebidas  {get;set;} = [];
 }

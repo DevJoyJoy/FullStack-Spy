@@ -1,3 +1,4 @@
+using Backend.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
 public static class GrupoClassMap
@@ -13,6 +14,10 @@ public static class GrupoClassMap
     //================PROPERTIES================
         builder.Property(grupo => grupo.Nome)
             .HasColumnName("nome")
+            .IsRequired();
+
+        builder.Property(grupo => grupo.Link)
+            .HasColumnName("link")
             .IsRequired();
 
     //================RELATIONS================

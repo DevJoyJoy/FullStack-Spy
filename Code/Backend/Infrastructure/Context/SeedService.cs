@@ -1,8 +1,9 @@
 using System.ComponentModel;
+using Microsoft.EntityFrameworkCore;
 // popular o banco -> nesse nao precisa pq obriga a criar
 public class SeedService
 (
-    Context ctx
+    DbContext ctx
 )
 {
     public async Task SeedData()

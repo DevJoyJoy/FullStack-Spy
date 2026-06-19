@@ -1,3 +1,4 @@
+using Backend.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 
 public static class MigrationConfiguration
@@ -6,7 +7,7 @@ public static class MigrationConfiguration
     {
         using (var scope = app.Services.CreateScope())
         {
-            var db = scope.ServiceProvider.GetRequiredService<Context>();
+            var db = scope.ServiceProvider.GetRequiredService<SpyContext>();
             db.Database.Migrate();
 
             var seeder = scope.ServiceProvider

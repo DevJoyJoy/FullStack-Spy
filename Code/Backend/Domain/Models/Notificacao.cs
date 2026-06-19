@@ -1,7 +1,6 @@
 public class Notificacao : BaseModel
 {
     //================PROPERTIES================
-    public required int Id {get;set;}
     public required string Mensagem {get;set;}
 
     //================MY-RELATIONS================
