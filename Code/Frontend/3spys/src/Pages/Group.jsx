@@ -10,17 +10,17 @@ export function Group() {
 
     return(
         <>
-        <div className="page">
+        <div className="pageGroup">
             <Header></Header>
-                <div className='optionsContainer'>
-                    <button className="option" onClick={() => setCreateGroup(true)}>
+                <div className='optionsContainerGroup'>
+                    <button className="optionGroup" onClick={() => setCreateGroup(true)}>
                             <img src="/circle-blank.svg" alt="" />
                             <section>
                                 <h1>Criar grupo</h1>
                             </section>
                     </button>
 
-                    <button className="option" onClick={() => setEnterGroup(true)}>
+                    <button className="optionGroup" onClick={() => setEnterGroup(true)}>
                         <img src="/circle-blank.svg" alt="" />
                         <section>
                             <h1>Entrar em grupo</h1>

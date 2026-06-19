@@ -1,4 +1,4 @@
-.page {
+.pageGroup {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,27 +8,30 @@
     box-sizing: border-box;
 }
 
-.optionsContainer {
+.optionsContainerGroup {
     padding-top: 10vh;
     flex: 1;
     overflow-y: auto;
 }
 
-.option {
+.optionGroup {
     width: 100%;
     height: 10vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.option img {
+.optionGroup img {
     height: 7vh;
     width: auto;
 }
 
-.option h1 {
+.optionGroup h1 {
     font-size: x-large;
 }
 
-.option a {
+.optionGroup a {
     display: flex;
     align-items: center;
     justify-content: flex-start;

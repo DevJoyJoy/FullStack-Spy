@@ -1,4 +1,4 @@
-.page {
+.pageCircle {
     width: 100%;
     height: 100vh;
     display: flex;
@@ -8,27 +8,30 @@
     box-sizing: border-box;
 }
 
-.optionsContainer_ {
+.optionsContainerCircle {
     margin-top: 4vw;
     flex: 1;
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
-.option {
+.optionCircle {
     width: 100%;
     height: 10vh;
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-start;
     gap: 3vw;
 }
 
-.option img {
+.optionCircle img {
     height: 7vh;
     width: auto;
 }
 
-.option h1 {
+.optionCircle h1 {
     font-size: x-large;
 }
 
