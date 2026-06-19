@@ -86,21 +86,21 @@ export function Circles() {
                 <div className='optionsContainerCircle'>
 
                     <button className="optionCircle" onClick={() => setCreateCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Criar círculo</h1>
                         </section>
                     </button>
 
                     <button className="optionCircle" onClick={() => setAlterCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Visualizar círculo</h1>
                         </section>
                     </button>
 
                     <button className="optionCircle" onClick={() => setAlterCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Alterar círculo</h1>
                         </section>

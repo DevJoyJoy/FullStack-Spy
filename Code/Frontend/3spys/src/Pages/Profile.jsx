@@ -17,28 +17,28 @@ export function Profile() {
         <div className="pageProfile">
             <Header></Header>
                 <div className="profileContainer">
-                    <img src="/person.png" alt="" />
+                    <img src="/personFull.png" alt="" />
                     <h1>Nome do farmador</h1>
                 </div>
                 <div className='optionsContainerProfile'>
                     <h1>Ações para usuário</h1>
                     <br />
                     <button className="optionProfile" onClick={() => setAlterProfile(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/personFull.png" alt="" />
                         <section>
                             <h1>Alterar informações</h1>
                         </section>
                     </button>
 
                     <button className="optionProfile" onClick={() => setExcludeProfile(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/personFull.png" alt="" />
                         <section>
                             <h1>Excluir conta</h1>
                         </section>
                     </button>
 
                     <button className="optionProfile" onClick={() => setLogout(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/personFull.png" alt="" />
                         <section>
                             <h1>Sair da conta</h1>
                         </section>
