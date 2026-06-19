@@ -8,4 +8,4 @@ public class GetLastLocationByUserIdUseCase(ILocationService service)
     {
         return service.GetLastLocationByUserId(user);
     }
-}
+ }
