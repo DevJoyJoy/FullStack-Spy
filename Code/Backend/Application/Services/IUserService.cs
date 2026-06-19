@@ -7,7 +7,7 @@ public interface IUserService
 {
     Task<Result<CreateAccountResponse>> CreateAccount(CreateAccountPayload payload);
     Task<Result<DeleteAccountResponse>> DeleteAccount(string Name);
-    Task<Usuario> ViewGroupByName(string Name);
-    Task<Usuario> GetUserByName(string Name);
+    Task<Result<CreateAccountResponse>> GetUserByName(string Name);
+    Task<Result<List<Grupo>>>  ViewGroupByName(string Name);
 
 }

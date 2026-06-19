@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Backend.Application;
 using Backend.Application.Features.User.CreateAccount;
 using Backend.Application.Features.User.DeleteAccount;
@@ -12,7 +13,7 @@ public class UserService(SpyContext ctx) : IUserService
   
     public async Task<Result<CreateAccountResponse>> CreateAccount(CreateAccountPayload payload)
     {
-        var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u. Nome == payload.Name);
+        var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u.Nome == payload.Name);
 
         if(user is null) 
             return Result<CreateAccountResponse>.Fail("This user already exists!");
@@ -38,18 +39,63 @@ public class UserService(SpyContext ctx) : IUserService
         });
     }
 
-    public Task<Result<DeleteAccountResponse>> DeleteAccount(string Name)
+    public async Task<Result<string>> DeleteAccount(string Name)
     {
+        
+        var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u.Nome == Name );
+
+        if(user is null)
+            return Result<string>.Fail("User is null");
+        
+        if(Name is null)
+            return Result<string>.Fail("Name is null");
+
+        ctx.Usuarios.Remove(user);
+
+        await ctx.SaveChangesAsync();
+
+        return Result<string>.Success("Usuario deletado");
+
+    
+    }
+
+    public async Task<Result<CreateAccountResponse>> GetUserByName(string Name_)
+    {
+        var user = await ctx.Usuarios.FirstOrDefaultAsync(u => u.Nome == Name_);
+        if(user is null)
+            return Result<CreateAccountResponse>.Fail("User is null");
+
+        if(Name_ is null)
+            return Result<CreateAccountResponse>.Fail("Name is null");
+
+        await ctx.SaveChangesAsync();
+
+        return Result<CreateAccountResponse>.Success(new CreateAccountResponse()
+        {
+            Name = user.Nome,
+            Icon = user.Icon
+        });
         
     }
 
-    public Task<Usuario> GetUserByName(string Name)
+    public async Task<Result<List<Grupo>>> ViewGroupByName(string Name)
     {
-        throw new NotImplementedException();
-    }
 
-    public Task<Usuario> ViewGroupByName(string Name)
-    {
-        throw new NotImplementedException();
+        if(Name is null)
+            return Result<List<Grupo>>.Fail("Name is null");
+
+        var user = await ctx
+            .Usuarios
+            .Include(u => u.Grupos)
+            .FirstOrDefaultAsync(u => u.Nome == Name);
+        
+        if(user is null)
+            return Result<List<Grupo>>.Fail("User is null");
+
+        List<Grupo> Grupo = user.Grupos
+            .ToList();
+
+        return Result<List<Grupo>>.Success(Grupo);
+        
     }
 }
