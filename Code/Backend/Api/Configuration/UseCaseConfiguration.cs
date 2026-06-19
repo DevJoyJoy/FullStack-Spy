@@ -25,7 +25,6 @@ public static class UseCaseConfiguration
         services.AddTransient<CreateGroupUseCase>();
         services.AddTransient<DeleteGroupUseCase>();
         services.AddTransient<JoinGroupUseCase>();
-        services.AddTransient<ShareGroupUseCase>();
 
         //Location
         services.AddTransient<GetDataUseCase>();
