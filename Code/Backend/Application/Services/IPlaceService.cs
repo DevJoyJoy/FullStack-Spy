@@ -1,7 +1,6 @@
 using Backend.Application;
 using Backend.Application.Features.Place.CreateCircle;
 using Backend.Application.Features.Place.ViewCircle;
-using Backend.Application.Features.User.ViewGroups;
 
 public interface IPlaceService
 {

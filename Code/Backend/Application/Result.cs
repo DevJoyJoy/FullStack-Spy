@@ -4,7 +4,7 @@ public record Result<T>
 (
 	bool IsSuccess,
 	T data,
-	string reason
+	string? reason
 )
 {
 	public static Result<T> Success(T data)

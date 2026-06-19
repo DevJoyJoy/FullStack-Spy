@@ -7,7 +7,8 @@ public static class ServiceConfiguration
     public static void AddServices(this IServiceCollection services)
     {
         services.AddTransient<SeedService>();
+        services.AddTransient<IUserService, UserService>();
         services.AddTransient<IGroupService, GroupService>();
-        // services.AddTransient<I_Service, _Service>();
+        services.AddTransient<IPlaceService, PlaceService>();
     }
 }

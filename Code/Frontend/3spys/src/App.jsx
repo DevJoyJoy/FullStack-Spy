@@ -1,120 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useJsApiLoader } from '@react-google-maps/api'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
+import { MainPage } from './Pages/MainPage'
+import { Profile } from './Pages/Profile'
+import { Circles } from './Pages/Circles'
+import { Group } from './Pages/Group'
+import { Login } from './Pages/Login'
+
+const GOOGLE_LIBRARIES = ['places'];
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { isLoaded, loadError } = useJsApiLoader({
+    googleMapsApiKey: "SUA_CHAVE_API_DO_GOOGLE_AQUI",
+    libraries: GOOGLE_LIBRARIES,
+  });
+
+  if (loadError) {
+    return <div>Erro ao carregar o Google Maps. Verifique sua chave de API.</div>;
+  }
+
+  if (!isLoaded) {
+    return <div className="loading-screen">Carregando serviços de mapa...</div>;
+  }
 
   return (
     <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<MainPage/>}/>
+          <Route path='/Profile' element={<Profile/>}/>
+          <Route path='/Circle' element={<Circles isLoaded={isLoaded}/>}/>
+          <Route path='/Group' element={<Group/>}/>
+          <Route path='/Login' element={<Login/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }

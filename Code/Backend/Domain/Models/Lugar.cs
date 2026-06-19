@@ -1,4 +1,4 @@
-using Backend.Domain.Models;
+namespace Backend.Domain.Models;
 
 public class Lugar : BaseModel
 {

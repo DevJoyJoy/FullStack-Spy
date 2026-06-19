@@ -1,0 +1,49 @@
+.page {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding-bottom: 10vh;
+    box-sizing: border-box;
+}
+
+.map {
+    background-color: rgb(123, 131, 131);
+    width: 100%;
+    height: 50vh;
+    flex-shrink: 0;
+}
+
+.users {
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.users img {
+    height: 80%;
+    width: auto;
+}
+
+.users h1 {
+    font-size: x-large;
+}
+
+.users p {
+    font-size: small;
+}
+
+.usersContainer {
+    flex: 1;
+    overflow-y: auto;
+}
+
+
+
+
+
+
+
