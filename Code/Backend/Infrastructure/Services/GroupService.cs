@@ -22,6 +22,7 @@ public class GroupService( SpyContext ctx, IUserService userService) : IGroupSer
     public async Task<Result<CreateGroupResponse>> CreateGroup(CreateGroupPayload payload)
     {
         var group = await ctx.Grupos.AnyAsync(n => n.Nome == payload.Nome);
+        
         if(group) 
             return Result<CreateGroupResponse>.Fail("This group already exists!");
 
@@ -44,7 +45,11 @@ public class GroupService( SpyContext ctx, IUserService userService) : IGroupSer
 
     public async Task<Result<Grupo>> GetById(int id)
     {
-        Grupo? group = await ctx.Grupos.FirstOrDefaultAsync(g => g.Id == id);
+        Grupo? group = await ctx.Grupos
+            .Include(u => u.Lugares)
+            .Include(g => g.Usuarios)
+                .ThenInclude(u => u.Localizacoes)
+            .FirstOrDefaultAsync(g => g.Id == id);
         if(group is null)
             return Result<Grupo>.Fail("Group not Found");
         

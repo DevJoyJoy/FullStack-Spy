@@ -85,7 +85,7 @@ public class UserService(SpyContext ctx) : IUserService
         
     }
 
-    public async Task<Result<List<Grupo>>> ViewGroupByName(string Name)
+    public async Task<Result<List<Grupo>>> ViewGroupByUserName(string Name)
     {
 
         if(Name is null)
