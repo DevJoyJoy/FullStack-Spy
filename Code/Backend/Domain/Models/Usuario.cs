@@ -4,7 +4,7 @@ public class Usuario : BaseModel
 {
     //================PROPERTIES================
     public required string Nome {get;set;}
-    public required string Icon {get;set;}
+    public string Icon {get;set;} = " :(: ";
 
 
     //================RELATIONS================

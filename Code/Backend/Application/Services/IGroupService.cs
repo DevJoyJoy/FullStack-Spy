@@ -1,3 +1,4 @@
+using Backend.Application.Features.GetByLinkDTO;
 using Backend.Application.Features.Group.CreateGroup;
 using Backend.Domain.Models;
 
@@ -5,6 +6,7 @@ namespace Backend.Application.Services;
 
 public interface IGroupService
 {
-    Task<Grupo> GetByLink(string link);
-    Task<Grupo> CreateGroup(CreateGroupPayload payload);
+
+    Task<Result<GetBylinkDTO>> GetByLink(string link);
+    Task<Result<CreateGroupResponse>> CreateGroup(CreateGroupPayload payload);
 }
