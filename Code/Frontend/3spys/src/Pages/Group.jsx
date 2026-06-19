@@ -2,6 +2,7 @@ import { Header } from "../Components/Header"
 import { Footer } from "../Components/Footer"
 import { useState } from "react";
 import '../Styles/Group.css'
+import '../Styles/Components.css'
 
 export function Group() {
     const [enterGroupModal, setEnterGroup] = useState(false);
