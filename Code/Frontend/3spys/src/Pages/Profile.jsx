@@ -5,6 +5,8 @@ import { useState } from "react"
 
 export function Profile() {
     const [alterProfileModal, setAlterProfile] = useState(false)
+    const [excludeProfileModal, setExcludeProfile] = useState(false)
+    const [logoutModal, setLogout] = useState(false);
     const [image, setImage] = useState({
         preview: "",
         file: null,
@@ -15,7 +17,7 @@ export function Profile() {
         <div className="pageProfile">
             <Header></Header>
                 <div className="profileContainer">
-                    <img src="/circle-blank.svg" alt="" />
+                    <img src="/person.png" alt="" />
                     <h1>Nome do farmador</h1>
                 </div>
                 <div className='optionsContainerProfile'>
@@ -28,14 +30,14 @@ export function Profile() {
                         </section>
                     </button>
 
-                    <button className="optionProfile">
+                    <button className="optionProfile" onClick={() => setExcludeProfile(true)}>
                         <img src="/circle-blank.svg" alt="" />
                         <section>
                             <h1>Excluir conta</h1>
                         </section>
                     </button>
 
-                    <button className="optionProfile">
+                    <button className="optionProfile" onClick={() => setLogout(true)}>
                         <img src="/circle-blank.svg" alt="" />
                         <section>
                             <h1>Sair da conta</h1>
@@ -73,6 +75,46 @@ export function Profile() {
                 <br />
                 <button onClick={() => setAlterProfile(false)} className="modalButton">
                     Salvar alterações
+                </button>
+            </div>
+            </div>
+        )}
+
+        {excludeProfileModal && (
+        <div className="modalOverlay">
+          <div className="modalBackdrop" onClick={() => {setExcludeProfile(false);}}></div>
+
+            <div className="modalContainer">
+                <h2>Excluir perfil</h2>
+                <br />
+                <p>Confirma que deseja excluir a conta?</p>
+                <br />
+                <button onClick={() => setExcludeProfile(false)} className="modalButton">
+                    Cancelar
+                </button>
+                <br />
+                <button onClick={() => setExcludeProfile(false)} className="modalButton">
+                    Excluir
+                </button>
+            </div>
+            </div>
+        )}
+
+        {logoutModal && (
+        <div className="modalOverlay">
+          <div className="modalBackdrop" onClick={() => {setLogout(false);}}></div>
+
+            <div className="modalContainer">
+                <h2>Sair da conta</h2>
+                <br />
+                <p>Confirma que deseja sair a conta?</p>
+                <br />
+                <button onClick={() => setLogout(false)} className="modalButton">
+                    Cancelar
+                </button>
+                <br />
+                <button onClick={() => setLogout(false)} className="modalButton">
+                    Sair
                 </button>
             </div>
             </div>

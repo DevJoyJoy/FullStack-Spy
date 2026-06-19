@@ -14,14 +14,14 @@ export function Group() {
             <Header></Header>
                 <div className='optionsContainerGroup'>
                     <button className="optionGroup" onClick={() => setCreateGroup(true)}>
-                            <img src="/circle-blank.svg" alt="" />
+                            <img src="/groupFull.png" alt="" />
                             <section>
                                 <h1>Criar grupo</h1>
                             </section>
                     </button>
 
                     <button className="optionGroup" onClick={() => setEnterGroup(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/groupFull.png" alt="" />
                         <section>
                             <h1>Entrar em grupo</h1>
                         </section>
