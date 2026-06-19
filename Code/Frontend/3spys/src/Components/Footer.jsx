@@ -8,25 +8,25 @@ export function Footer() {
         <div className="footer">
             <div className="menuItem">
                 <a href="" onClick={() => navigate('/')}>
-                    <img src="/circle-blank.svg" alt="" />
+                    <img src="/compass.png" alt="" />
                     <p>Localização</p>
                 </a>
             </div>
             <div className="menuItem">
                 <a href="" onClick={() => navigate('/Group')}>
-                    <img src="/circle-blank.svg" alt="" />
+                    <img src="/group.png" alt="" />
                     <p>Grupos</p>
                 </a>
             </div>
             <div className="menuItem">
                 <a href="" onClick={() => navigate('/Circle')}>
-                    <img src="/circle-blank.svg" alt="" />
+                    <img src="/locator.png" alt="" />
                     <p>Círculos</p>
                 </a>
             </div>
             <div className="menuItem">
                 <a href="" onClick={() => navigate('/Profile')}>
-                    <img src="/circle-blank.svg" alt="" />
+                    <img src="/person.png" alt="" />
                     <p>Perfil</p>
                 </a>
             </div>

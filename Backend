@@ -10,13 +10,13 @@ COPY ./Code/Backend/*.slnx ./
 COPY ./Code/Backend/Api/*csproj ./Api/
 COPY ./Code/Backend/Application/*csproj ./Application/
 COPY ./Code/Backend/Domain/*csproj ./Domain/
-COPY ./Code/Backend/Persistence/*csproj ./Persistence/
+COPY ./Code/Backend/Infrastructure/*csproj ./Infrastructure/
 
 RUN dotnet restore
 
 COPY ./Code/Backend/ ./
 
-CMD ["dotnet", "run", "--urls=http://0.0.0.0:1111", "--project", ".Api"]
+CMD ["dotnet", "run", "--urls=http://0.0.0.0:1111", "--project", "./Api"]
 
 EXPOSE 1111
 

@@ -1,55 +1,58 @@
 import { Header } from "../Components/Header"
 import { Footer } from "../Components/Footer"
-import { useState, useEffect, useRef } from "react" // MUDANÇA: Importado useEffect e useRef
+import { useState } from "react" 
 import '../Styles/Circles.css'
 import '../Styles/Components.css'
 
-export function Circles({ isLoaded }) { // MUDANÇA: Recebe a propriedade isLoaded
+export function Circles() {
     const [createCircleModal, setCreateCircle] = useState(false);
     const [alterCircleModal, setAlterCircle] = useState(false);
 
-    // MUDANÇA: Novos estados para controlar os inputs e as coordenadas obtidas
     const [nomeCirculo, setNomeCirculo] = useState("");
     const [enderecoTexto, setEnderecoTexto] = useState("");
     const [coordenadas, setCoordenadas] = useState({ lat: null, lng: null });
+    const [carregando, setCarregando] = useState(false);
 
-    const inputRefCriar = useRef(null);
-    const autocompleteRef = useRef(null);
+    const handleBuscarCoordenadas = async () => {
+        if (!enderecoTexto.trim()) {
+            alert("Digite um endereço primeiro para podermos validar!");
+            return;
+        }
 
-    // MUDANÇA: Efeito para ativar o Autocomplete do Google quando o modal abrir
-    useEffect(() => {
-        if (!isLoaded || !inputRefCriar.current || !window.google) return;
+        setCarregando(true);
+        try {
+            const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(enderecoTexto)}&limit=1`;
+            const response = await fetch(url, {
+                headers: {
+                    'Accept-Language': 'pt-BR'
+                }
+            });
+            const data = await response.json();
 
-        autocompleteRef.current = new window.google.maps.places.Autocomplete(inputRefCriar.current, {
-            fields: ['geometry', 'formatted_address'],
-            types: ['address']
-        });
-
-        autocompleteRef.current.addListener('place_changed', () => {
-            const place = autocompleteRef.current.getPlace();
-
-            if (place.geometry && place.geometry.location) {
+            if (data && data.length > 0) {
+                const resultado = data[0];
                 setCoordenadas({
-                    lat: place.geometry.location.lat(),
-                    lng: place.geometry.location.lng()
+                    lat: parseFloat(resultado.lat),
+                    lng: parseFloat(resultado.lon)
                 });
-                setEnderecoTexto(place.formatted_address || "");
+                console.log(resultado.lat);
+                console.log(resultado.lon);
+                setEnderecoTexto(resultado.display_name);
             } else {
-                alert("Por favor, selecione um endereço válido da lista sugerida.");
+                alert("Não encontramos esse endereço. Tente digitar de forma mais simples (Ex: Rua Exemplo, 123, Cidade).");
+                setCoordenadas({ lat: null, lng: null });
             }
-        });
+        } catch (error) {
+            console.error("Erro na busca do endereço:", error);
+            alert("Erro ao conectar com o serviço de mapas gratuito.");
+        } finally {
+            setCarregando(false);
+        }
+    };
 
-        return () => {
-            if (window.google && autocompleteRef.current) {
-                window.google.maps.event.clearInstanceListeners(autocompleteRef.current);
-            }
-        };
-    }, [isLoaded, createCircleModal]);
-
-    // MUDANÇA: Função para disparar os dados montados ao backend
     const handleCriarCirculo = async () => {
         if (!nomeCirculo || !coordenadas.lat || !coordenadas.lng) {
-            alert("Preencha o nome e selecione um endereço válido nas sugestões.");
+            alert("Preencha o nome e valide o endereço clicando no botão 'Validar Endereço' primeiro!");
             return;
         }
 
@@ -61,7 +64,6 @@ export function Circles({ isLoaded }) { // MUDANÇA: Recebe a propriedade isLoad
         };
 
         console.log("Pronto para enviar ao Backend:", payload);
-        // Seu axios.post ou fetch vai aqui...
 
         alert("Círculo criado com sucesso!");
         setNomeCirculo("");
@@ -84,21 +86,21 @@ export function Circles({ isLoaded }) { // MUDANÇA: Recebe a propriedade isLoad
                 <div className='optionsContainerCircle'>
 
                     <button className="optionCircle" onClick={() => setCreateCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Criar círculo</h1>
                         </section>
                     </button>
 
                     <button className="optionCircle" onClick={() => setAlterCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Visualizar círculo</h1>
                         </section>
                     </button>
 
                     <button className="optionCircle" onClick={() => setAlterCircle(true)}>
-                        <img src="/circle-blank.svg" alt="" />
+                        <img src="/locatorFull.png" alt="" />
                         <section>
                             <h1>Alterar círculo</h1>
                         </section>
@@ -121,7 +123,6 @@ export function Circles({ isLoaded }) { // MUDANÇA: Recebe a propriedade isLoad
                 </select>
                 <br />
                 <h3>Nome</h3>
-                {/* MUDANÇA: Inputs agora controlados pelo estado */}
                 <input 
                     className="modalInput" 
                     type="text" 
@@ -131,25 +132,35 @@ export function Circles({ isLoaded }) { // MUDANÇA: Recebe a propriedade isLoad
                 />
                 <br />
                 <h3>Endereço</h3>
-                {/* MUDANÇA: Input recebeu a ref e o value */}
-                <input 
-                    ref={inputRefCriar}
-                    className="modalInput" 
-                    type="text" 
-                    placeholder="Insira aqui o endereço do círculo:" 
-                    value={enderecoTexto}
-                    onChange={(e) => setEnderecoTexto(e.target.value)}
-                />
+                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
+                    <input 
+                        className="modalInput" 
+                        type="text" 
+                        placeholder="Ex: Av. Paulista, 1000, São Paulo" 
+                        value={enderecoTexto}
+                        onChange={(e) => {
+                            setEnderecoTexto(e.target.value);
+                            if(coordenadas.lat) setCoordenadas({ lat: null, lng: null }); // Reseta validação se mudar o texto
+                        }}
+                        style={{ flex: 1 }}
+                    />
+                    <button 
+                        type="button" 
+                        onClick={handleBuscarCoordenadas}
+                        disabled={carregando}
+                        style={{ padding: '10px', cursor: 'pointer', borderRadius: '5px', border: '1px solid #ccc', backgroundColor: '#e0e0e0' }}
+                    >
+                        {carregando ? "..." : "Validar"}
+                    </button>
+                </div>
                 <br />
                 
-                {/* MUDANÇA: Feedback visual opcional de sucesso */}
                 {coordenadas.lat && (
                     <p style={{ color: '#2e7d32', fontSize: '13px', margin: '-10px 0 10px 0' }}>
-                        ✓ Localização validada com sucesso!
+                        ✓ Localização encontrada com sucesso! (Lat: {coordenadas.lat.toFixed(4)})
                     </p>
                 )}
 
-                {/* MUDANÇA: Troca do onClick para disparar a função handleCriarCirculo */}
                 <button onClick={handleCriarCirculo} className="modalButton">
                     Criar
                 </button>
